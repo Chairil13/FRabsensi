@@ -1,0 +1,54 @@
+Detail project:
+- Bisa deteksi wajah berdasarkan file gambar yang sudah terdaftar pada folder orang dan otomatis membuat daftar kehadiran (file CSV) dengan cara tekan tombol 'q' pada keyboard
+- Ketika wajah terdeteksi di waktu sebelum jam masuk maka akan otomatis terdeteksi hadir dan sistem akan membunyikan notfikasi kehadiran, sebaliknya jika wajah terdeteksi di waktu setelah jam masuk maka akan otomatis terdeteksi terlambat dan sistem akan membunyikan notifikasi terlambat
+- Daftar kehadiran bisa diakses lewat Microsoft Excel dan sudah otomatis sesuai waktu hari itu dan absensi sesuai waktu yang sudah disetting
+- Kamera untuk deteksi wajah bisa diganti dengan kamera handphone, kemungkinan juga CCTV (Belum dicoba)
+
+Tutorial cara install dan running program:
+
+1. Pastikan versi python mulai dari 3.9 kebawah (karena versi diatas nya kemungkinan belum kompatibel dengan versi library pada project ini). Disini saya menggunakan python versi 3.8.10
+
+2. Download library yang diperlukan untuk project ini yaitu openCV, face recognition, dan pygame, berikut cara install:
+
+Buka terminal (administrasi) lalu ketik berikut:
+- pip install opencv-python
+- pip install face_recognition
+- pip install pygame
+
+Bila error saat install library diatas, maka ada beberapa kemungkinan:
+- Versi python tidak kompatibel dengan versi library diatas, terutama library face recognition
+- Ganti dengan pip3, misalnya pip3 install face_recognition
+- Versi pip nya sudah usang, update ke versi terbaru (biasanya saat install nanti muncul saran dari python untuk install pip versi terbaru)
+- Saat install library face recognition, kemungkinan ada error diawal, ikuti tutorial ini untuk mengatasinya https://youtu.be/BUu6hrcYI_c?si=hfI5n3KfY5FYz_4G
+
+3. Project ini menggunakan visual studio code editor, sebelum running pastikan sudah install extension python pada extensions market
+
+4. Untuk running program klik icon ▶️ pada pojok kanan atas atau bisa jalankan program tanpa debugger (tekan f5 atau Fn+f5)
+
+5. Saat program berjalan, arahkan wajah ke kamera (usahakan dekat dan tidak terhalang apapun agar kamera mengenali)
+
+6. Jika kamera tidak terdeteksi atau tidak aktif maka lakukan setting pada kodingan baris ke 38, disitu saya setting (0) karna kamera default sistem, silahkan ganti ke angka 1 jika kamera bawaan laptop pada angka tersebut, dan seterusnya
+
+7. Jika ingin menggunakan kamera handphone sebagai deteksi wajah maka ganti angka untuk mode kamera bawaan, misalnya punya saya yaitu (0) diganti menjadi (1). Silahkan gunakan aplikasi third party seperti DroidCam atau sejenisnya, berikut link tutorial nya https://youtu.be/1DuBmH65XkI?si=a2cwjBNNvTgIvedh
+
+8. Jika menggunakan aplikasi third party kamera handphone sebagai deteksi wajah, maka tiap kali memulai ulang program tanpa menggunakan aplikasi third party setting kamera bawaan nya berada pada angka yang sudah disetting sebelumnya, misal punya saya (1)
+
+9. Jika ingin mengembalikan angka ke kamera bawaan, maka harus uninstall dulu aplikasi third party untuk handphone tersebut
+
+10. Untuk menggunakan CCTV sebagai kamera deteksi wajah itu agak ribet karena CCTV biasanya mempunyai proteksi tersendiri agar dijebol (Belum pernah coba). kemungkinan bisa jika CCTV punya IP-Address dan aplikasi DroidCam sudah terinstall. Pastikan juga agar CCTV bisa tangkap wajah dengan jernih dan tidak kejauhan agar proses autentikasi nya berhasil
+
+11. Ketika wajah dikenali (wajah yang terdaftar di folder orang) maka program akan membunyikan notifikasi hadir jika hadir tepat waktu atau notfikasi terlambat jika hadir lewat waktu yang ditentukan
+
+12. Silahkan ganti jam kerja sesuai yang diinginkan, kodingannya bisa bisa ditemukan pada baris ke 66, disitu saya setting jam 08:00
+
+13. Jika ingin menghentikan program, klik dulu kamera yang aktif baru tekan huruf 'q' pada keyboard
+
+14. Setelah program berhenti dengan cara keluar, maka program akan otomatis membuat file CSV yang berisi daftar kehadiran, buka file CSV tersebut melalui Microsoft Excel maka ditampilkan daftar orang yang hadir berdasarkan nama, waktu absensi dan keterangan yang sudah disetting. Nama file CSV nya juga sudah otomatis membuat daftar kehadiran berdasarkan tanggal, bulan, dan tahun
+
+15. Dibeberapa kasus saat tekan tombol close pada kamera, programnya tidak mau keluar. Hal ini karena menjalankan program dengan cara klik icon ▶️ pada pojok kanan VSCode, cara keluar dari kamera yaitu tekan tong sampah pada terminal yang sedang terbuka pada VSCode
+
+16. Jika menjalankan program tanpa debugger maka cara keluar dari kamera yaitu dengan cara klik kotak merah saat mode debugger nya aktif atau tekan lingkaran disampingnya jika ingin memulai ulang
+
+17. Jika ingin kolom waktu absensi berisi nilai seperti '########', maka lebarkan dulu kolomnya kesamping kanan agar format waktu nya terlihat
+
+18. Ubah nama gambar dengan format berikut, misalnya Chairil Ali 200102121.png jika ingin file CSV menampilkan nama dan NPM
