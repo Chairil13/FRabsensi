@@ -6,14 +6,16 @@ Detail project:
 
 Tutorial cara install dan running program:
 
-1. Pastikan versi python mulai dari 3.9 kebawah (karena versi diatas nya kemungkinan belum kompatibel dengan versi library pada project ini). Disini saya menggunakan python versi 3.8.10
+1. Pastikan versi python mulai dari 3.9 kebawah (karena versi diatas nya kemungkinan belum kompatibel dengan versi library pada project ini). Disini saya menggunakan python versi 3.8.10 (https://www.python.org/downloads/release/python-3810/)
 
 2. Download library yang diperlukan untuk project ini yaitu openCV, face recognition, dan pygame, berikut cara install:
 
 Buka terminal (administrasi) lalu ketik berikut:
+- python -m pip install --upgrade pip (upgrade pip)
 - pip install opencv-python
 - pip install face_recognition
 - pip install pygame
+- pip install pandas
 
 Bila error saat install library diatas, maka ada beberapa kemungkinan:
 - Versi python tidak kompatibel dengan versi library diatas, terutama library face recognition
